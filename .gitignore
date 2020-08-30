@@ -2,3 +2,6 @@
 /pyqt
 source/py_ui/__pycache__
 source/tools/__pycache__
+build/
+dist/
+__pycache__/
