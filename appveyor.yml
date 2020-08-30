@@ -17,7 +17,7 @@ init:
 
 install:
   - python -m pip install -U pip wheel setuptools
-  - python -m pip install -r requirements_dev.txt
+  - python -m pip install -r requirements.txt
 #TODO:
 #install UPX from  http://upx.sourceforge.net/download/...
   - echo No UPX.
@@ -36,4 +36,3 @@ test_script:
 artifacts:
  - path: dist/$(executable_name)
    name: $(executable_name)-py$(PYTHON_VERSION)
-   
