@@ -26,7 +26,7 @@ class mywindow(QtWidgets.QMainWindow, screen.Ui_screen):
     def generate(self):
         text = ""
         document = Document()
-        run  = document.add_paragraph().add_run()
+        run = document.add_paragraph().add_run()
         font = run.font
         font.name = "Times New Roman"
         font.size = Pt(7)
@@ -34,7 +34,6 @@ class mywindow(QtWidgets.QMainWindow, screen.Ui_screen):
             add = tab.getData()
             text += add + "\n"
             document.add_paragraph(add)
-
 
         options = QtWidgets.QFileDialog.Options()
         options |= QtWidgets.QFileDialog.DontUseNativeDialog

@@ -1,20 +1,21 @@
 from PyQt5 import QtGui, QtCore, QtWidgets
 import sys, os
-import source.tools.Constants as Constants  #pylint: disable=import-error
+import source.tools.Constants as Constants  # pylint: disable=import-error
 import pickle
+
 
 class Tab:
     def __init__(self, parent, tab_data, name):
         """
         Class creates one group of statements
-        
+
         returns tab which we can insert to main window
         """
         self.tab_name = name
 
         self.layout_widget = QtWidgets.QWidget()
         self.layout_widget.setGeometry(QtCore.QRect(0, 0, 891, 701))
-        
+
         self.layout = QtWidgets.QHBoxLayout(self.layout_widget)
 
         self.left_layout = QtWidgets.QVBoxLayout()
@@ -43,11 +44,14 @@ class Tab:
         self.out = self.scroll
 
     def getData(self):
-        return self.tab_name + ":\n" + "; ".join([core.getData() for core in self.cores])
+        return (
+            self.tab_name + ":\n" + "; ".join([core.getData() for core in self.cores])
+        )
+
 
 class Statements:
     def __init__(self, parent, statements, name):
-        """ 
+        """
         Class creates a group of checkboxes in horizontal layout
 
         returns horizontal layout we can insert to main window
@@ -96,8 +100,8 @@ class Statements:
             # input()
             try:
                 if self.core[i].isChecked():
-                    a = (self.core[i].text())
+                    a = self.core[i].text()
             except:
-                a = (self.core[i].toPlainText())
+                a = self.core[i].toPlainText()
             answer += a + ", " if a != "" else ""
-        return answer.rstrip(', ')
+        return answer.rstrip(", ")
