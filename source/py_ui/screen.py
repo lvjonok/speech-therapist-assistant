@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'source/qt_ui/main2.ui'
+# Form implementation generated from reading ui file 'source/qt_ui/main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
@@ -26,10 +26,16 @@ class Ui_screen(object):
         self.menubar = QtWidgets.QMenuBar(screen)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 804, 22))
         self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setObjectName("menu")
         screen.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(screen)
         self.statusbar.setObjectName("statusbar")
         screen.setStatusBar(self.statusbar)
+        self.action = QtWidgets.QAction(screen)
+        self.action.setObjectName("action")
+        self.menu.addAction(self.action)
+        self.menubar.addAction(self.menu.menuAction())
 
         self.retranslateUi(screen)
         self.tabWidget.setCurrentIndex(-1)
@@ -38,3 +44,5 @@ class Ui_screen(object):
     def retranslateUi(self, screen):
         _translate = QtCore.QCoreApplication.translate
         screen.setWindowTitle(_translate("screen", "MainWindow"))
+        self.menu.setTitle(_translate("screen", "Файл"))
+        self.action.setText(_translate("screen", "Сохранить файл ..."))
