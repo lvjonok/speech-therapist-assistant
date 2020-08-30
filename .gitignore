@@ -1,2 +1,4 @@
 /.vscode
 /pyqt
+source/py_ui/__pycache__
+source/tools/__pycache__
