@@ -42,13 +42,14 @@ class mywindow(QtWidgets.QMainWindow, screen.Ui_screen):
             self,
             caption="Выберите файл для сохранения",
             filter="Документы (.docx)",
+            directory="Название",
             options=options,
         )
         if fileName:
             # print(fileName)
             if fileName[::-1][0:5] != ".docx"[::-1]:
                 fileName += ".docx"
-        document.save(fileName)
+            document.save(fileName)
 
     def resizeEvent(self, event):
         # old_size = [event.oldSize().width(), event.oldSize().height()]
