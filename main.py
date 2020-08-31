@@ -15,6 +15,7 @@ class mywindow(QtWidgets.QMainWindow, screen.Ui_screen):
         self.setupUi(self)
 
         self.action.triggered.connect(self.generate)
+        self.setWindowTitle("speech-therapist-assistant")
 
         self.tabs = []
 
