@@ -3,7 +3,7 @@ configuration: release
 environment:
   global:
     PYTHON_VERSION: 38
-    executable_name: main.exe
+    executable_name: speech-therapist-assistant.exe
   matrix:
   - PYTHON_VERSION: 35
   - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
