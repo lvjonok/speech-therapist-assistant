@@ -5,3 +5,5 @@ source/tools/__pycache__
 build/
 dist/
 __pycache__/
+/_site
+/_layouts
