@@ -44,9 +44,10 @@ class Tab:
         self.out = self.scroll
 
     def getData(self):
-        return (
-            self.tab_name + ":\n" + "; ".join([core.getData() for core in self.cores])
-        )
+        return [
+            self.tab_name + ":\n",
+            "; ".join([core.getData() for core in self.cores])
+        ]
 
 
 class Statements:

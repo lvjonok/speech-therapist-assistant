@@ -25,7 +25,6 @@ class mywindow(QtWidgets.QMainWindow, screen.Ui_screen):
             self.tabs.append(tab)
 
     def generate(self):
-        text = ""
         document = Document()
         run = document.add_paragraph().add_run()
         font = run.font
@@ -33,8 +32,13 @@ class mywindow(QtWidgets.QMainWindow, screen.Ui_screen):
         font.size = Pt(7)
         for tab in self.tabs:
             add = tab.getData()
-            text += add + "\n"
-            document.add_paragraph(add)
+
+            p = document.add_paragraph("")
+            p.add_run(add[0]).bold = True
+            p.add_run(add[1])
+
+            # text += add
+            
 
         options = QtWidgets.QFileDialog.Options()
         options |= QtWidgets.QFileDialog.DontUseNativeDialog
@@ -49,6 +53,7 @@ class mywindow(QtWidgets.QMainWindow, screen.Ui_screen):
             # print(fileName)
             if fileName[::-1][0:5] != ".docx"[::-1]:
                 fileName += ".docx"
+            print(fileName)
             document.save(fileName)
 
     def resizeEvent(self, event):
